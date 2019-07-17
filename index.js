@@ -8,15 +8,10 @@ const yaml = require('js-yaml')
 
 const processor = unified().use(markdown).use(frontmatter)
 
-
 module.exports = (context = {}) => ({
   markup: ({ content }) => {
-    return new Promise((resolve, rejecct) => {
+    return new Promise((resolve, reject) => {
       processor
-        .use(() => thing => {
-          // console.log('thing', thing)
-
-        })
         .use(() => ({ children }) => {
           const { value } = children.find(child => child.type === 'yaml')
           context.frontmatter = yaml.safeLoad(value) || {}
@@ -26,7 +21,7 @@ module.exports = (context = {}) => ({
         .use(html)
         .process(content, (err, file) => {
           if (err) {
-            rejecct(err)
+            reject(err)
           }
           resolve({ code: String(file), map: '' })
         })
