@@ -2,6 +2,7 @@
   "name": "@ianwalter/slimdown",
   "description": "Not really a thing you should use yet",
   "version": "0.0.0",
+  "author": "Ian Walter <public@iankwalter.com> (https://iankwalter.com)",
   "license": "SEE LICENSE IN LICENSE",
   "main": "index.js",
   "scripts": {
@@ -15,6 +16,10 @@
     "type": "git",
     "url": "git+https://github.com/ianwalter/slimdown.git"
   },
+  "bugs": {
+    "url": "https://github.com/ianwalter/slimdown/issues"
+  },
+  "homepage": "https://github.com/ianwalter/slimdown#readme",
   "dependencies": {
     "js-yaml": "^3.13.1",
     "rehype-format": "^2.3.2",
